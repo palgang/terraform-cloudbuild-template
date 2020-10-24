@@ -7,7 +7,7 @@ locals {
 ###############################################################################
 
 resource "google_compute_firewall" "allow-tag-ssh" {
-  count         = length(var.ssh_source_ranges) > 0 ? 1 : 0
+  #count         = length(var.ssh_source_ranges) > 0 ? 1 : 0
   network       = "${local.network}"
   name          = "${local.network}-ingress-tag-ssh"
   description   = "Allow SSH to machines with the 'ssh' tag"
