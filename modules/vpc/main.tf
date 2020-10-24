@@ -15,7 +15,7 @@
 
 module "vpc" {
   source  = "terraform-google-modules/network/google"
-  version = "~> 2.0.0"
+  version = "0.6.0"
 
   project_id   = "${var.project}"
   network_name = "${var.env}"
@@ -27,4 +27,8 @@ module "vpc" {
       subnet_region = "us-west1"
     },
   ]
+  
+  secondary_ranges = {
+    "${var.env}-subnet-01" = []
+  }
 }

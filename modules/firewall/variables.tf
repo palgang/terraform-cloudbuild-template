@@ -16,3 +16,7 @@
 
 variable "project" {}
 variable "subnet" {}
+variable "ssh_target_tags" {
+  description = "List of target tags for tag-based SSH rule, defaults to ssh."
+  default     = ["ssh"]
+}
